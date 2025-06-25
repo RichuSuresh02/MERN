@@ -12,12 +12,11 @@ const app = express()
 const PORT = process.env.PORT || 5001
 // console.log("Starting server...");
 connectDB();
+// middle ware
+app.use(express.json());
 app.use("/api/notes", notesroutes);
 
-
-
-
-app.listen(5001, () => {
+app.listen(PORT, () => {
     console.log("Server started on PORT:" , PORT);
 }); 
 
